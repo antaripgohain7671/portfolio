@@ -1,94 +1,162 @@
 /* Root Vars */
-:root{
-    --bg-color: hsl(198, 12%, 16%);
-    --intro-ch-color: #CAD5E2;
-    font-size: 16px;
-    --typewriterSpeed: 2s;
-    --typewriterCharacters: 35;
-    font-family: 'Ubuntu Mono', monospace;
+:root {
+  --bg-color: hsl(198, 12%, 16%);
+  --intro-ch-color: #CAD5E2;
+  font-size: 16px;
+  --typewriterSpeed: 2s;
+  --typewriterCharacters: 35;
+  font-family: 'Ubuntu Mono', monospace;
 }
 
-body{
-    margin:0;
-    padding: 0;
-    box-sizing: border-box;
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* Intro */
 
-#intro{
-    background: var(--bg-color);
-    position: relative;
-    min-height:100vh;
-    max-width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+#intro {
+  background: var(--bg-color);
+  position: relative;
+  min-height: 100vh;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.intro-h1{
-    font-size: clamp(2rem, 3vw, 4rem);
-    color: var(--intro-ch-color);
-    position: relative;
-    font-family: 'Ubuntu Mono', monospace;
-    width:max-content;
+
+.intro-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.intro-h1 {
+  font-size: clamp(2rem, 3vw, 4rem);
+  color: var(--intro-ch-color);
+  position: relative;
+  font-family: 'Ubuntu Mono', monospace;
+  width: max-content;
 }
 
 .intro-h1::before,
-.intro-h1::after{
-    content: "";
-    top: 0;
-    right:0;
-    bottom: 0;
-    left:0;
-    position:absolute;
+.intro-h1::after {
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute;
 }
 
-.intro-h1::before{
-    background-color: var(--bg-color);
-    animation: typewriter var(--typewriterSpeed) steps(var(--typewriterCharacters)) 1s forwards;
+.intro-h1::before {
+  background-color: var(--bg-color);
+  animation: typewriter var(--typewriterSpeed) steps(var(--typewriterCharacters)) 1s forwards;
 
 }
 
-.intro-h1::after{
-    width: 0.025em;
-    background-color:rgba(202, 213, 226,0.75) ;
-    animation: 
-        typewriter var(--typewriterSpeed) steps(var(--typewriterCharacters)) 1s forwards,
-        blink 500ms steps(var(--typewriterCharacters)) infinite;
+.intro-h1::after {
+  width: 0.025em;
+  background-color: rgba(202, 213, 226, 0.75);
+  animation:
+    typewriter var(--typewriterSpeed) steps(var(--typewriterCharacters)) 1s forwards,
+    blink 500ms steps(var(--typewriterCharacters)) infinite;
 }
 
-.subtitle{
-    font-size: clamp(1rem, 3vw, 2rem);
-    color: var(--intro-ch-color);
-    font-weight: 400;
-    opacity: 0;
-    transform: translateY(2rem);
-    animation: sub_fadein 500ms ease calc(var(--typewriterSpeed) + 2s) forwards;
+.subtitle {
+  font-size: clamp(1rem, 3vw, 2rem);
+  color: var(--intro-ch-color);
+  font-weight: 400;
+  opacity: 0;
+  transform: translateY(2rem);
+  animation: sub_fadein 500ms ease calc(var(--typewriterSpeed) + 2s) forwards;
 }
 
-.btn-down a{
-    padding-top: 10rem;
+.arrow-down {
+  position: absolute;
+  bottom: 5%;
+  overflow: auto;
 }
-.btn-down a span{
-    position: absolute;
-    bottom: 3rem;
-    width: 2rem;
-    height: 2rem;
-    margin-left: -12px;
-    border-left: 1px solid #fff;
-    border-bottom: 1px solid #fff;
-    -webkit-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-    -webkit-animation: sdb05 1.5s infinite;
-    animation: sdb05 1.5s infinite;
-    box-sizing: border-box;
-  }
+.arrow-down p{
+  text-align: center;
+  font-size: clamp(1rem, 3vh, 2rem);
+  color: var(--intro-ch-color);
+  
+}
+
+.round {
+  margin-left: 5px;
+  position: relative;
+  border: 3px solid #fff;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+}
+
+.round span {
+  z-index: 999;
+  height: 3px;
+  margin:1px;
+  width: 30px;
+  background: #fff;
+  transition: 0.4s ease;
+}
+
+.round span:first-child {
+  display: block;
+  position: absolute;
+  transform: rotate(45deg);
+  left: 25%;
+  bottom: 35%;
+}
+
+.round span:nth-child(2) {
+  display: block;
+  position: absolute;
+  transform: rotate(-45deg);
+  left: 45%;
+  bottom: 35%;
+}
+
+.round span:nth-child(3) {
+  display: block;
+  position: absolute;
+  transform: rotate(45deg);
+  left: 25%;
+  bottom: 54%;
+}
+
+.round span:nth-child(4) {
+  display: block;
+  position: absolute;
+  transform: rotate(-45deg);
+  left: 45%;
+  bottom: 54%;
+}
+
+.round:hover span:nth-child(1) {
+  transform: rotate(-135deg);
+}
+
+.round:hover span:nth-child(2) {
+  transform: rotate(135deg);
+}
+
+.round:hover span:nth-child(3) {
+  transform: rotate(225deg);
+}
+
+.round:hover span:nth-child(4) {
+  transform: rotate(-225deg);
+}
 
 /* About */
 
-#about{
-    min-height: 100vh;
+#about {
+  min-height: 100vh;
 }
 
 
@@ -96,50 +164,56 @@ body{
 /* Animations */
 /* Intro type Animations */
 @keyframes typewriter {
-    to{ left:100%;
-    }
+  to {
+    left: 100%;
+  }
 }
 
 @keyframes blink {
-    to{
-        background: transparent;
-    }
-    
+  to {
+    background: transparent;
+  }
+
 }
 
 @keyframes sub_fadein {
-    to{
-        opacity: 1;
-        transform: translateY(0);
-    }
-    
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
 }
 
 /* Arrow animation */
 
 @-webkit-keyframes sdb05 {
-    0% {
-      -webkit-transform: rotate(-45deg) translate(0, 0);
-      opacity: 0;
-    }
-    50% {
-      opacity: 1;
-    }
-    100% {
-      -webkit-transform: rotate(-45deg) translate(-20px, 20px);
-      opacity: 0;
-    }
+  0% {
+    -webkit-transform: rotate(-45deg) translate(0, 0);
+    opacity: 0;
   }
-  @keyframes sdb05 {
-    0% {
-      transform: rotate(-45deg) translate(0, 0);
-      opacity: 0;
-    }
-    50% {
-      opacity: 1;
-    }
-    100% {
-      transform: rotate(-45deg) translate(-20px, 20px);
-      opacity: 0;
-    }
+
+  50% {
+    opacity: 1;
   }
+
+  100% {
+    -webkit-transform: rotate(-45deg) translate(-20px, 20px);
+    opacity: 0;
+  }
+}
+
+@keyframes sdb05 {
+  0% {
+    transform: rotate(-45deg) translate(0, 0);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: rotate(-45deg) translate(-20px, 20px);
+    opacity: 0;
+  }
+}
