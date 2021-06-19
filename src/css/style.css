@@ -1,11 +1,13 @@
 /* Root Vars */
 :root {
   --bg-color: hsl(198, 12%, 16%);
-  --intro-ch-color: #CAD5E2;
+  --intro-ch-color: #cad5e2;
+  --nav-color: rgba(191, 51, 18, 0.3);
+  --nav-ch-cholor: #e9edf1;
   font-size: 16px;
   --typewriterSpeed: 2s;
   --typewriterCharacters: 35;
-  font-family: 'Ubuntu Mono', monospace;
+  font-family: "Ubuntu Mono", monospace;
 }
 
 body {
@@ -14,6 +16,53 @@ body {
   box-sizing: border-box;
 }
 
+/* Navbar */
+header {
+  width: 100%;
+  display: flex;
+  place-content: center;
+}
+.top-nav {
+  opacity: 0;
+  width: 100%;
+  position: fixed;
+  transition: 0.5s ease-out;
+}
+.top-nav ul {
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
+  align-items: center;
+}
+.top-nav ul li {
+  margin: 1rem;
+}
+
+.top-nav ul li a {
+  color: var(--nav-ch-cholor);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: clamp(1rem, 3vh, 2rem);
+  background: #242b2e;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.top-nav ul li a {
+  color: var(--nav-ch-cholor);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: clamp(1rem, 3vh, 2rem);
+  background: #242b2e;
+  padding: 1rem;
+  border-radius: 10px;
+}
+.displayNav {
+  opacity: 1;
+  width: 100%;
+  transition: 0.3s ease-in;
+  background: var(--nav-color);
+}
 /* Intro */
 
 #intro {
@@ -33,12 +82,11 @@ body {
   align-items: center;
 }
 
-
 .intro-h1 {
   font-size: clamp(2rem, 3vw, 4rem);
   color: var(--intro-ch-color);
   position: relative;
-  font-family: 'Ubuntu Mono', monospace;
+  font-family: "Ubuntu Mono", monospace;
   width: max-content;
 }
 
@@ -54,15 +102,15 @@ body {
 
 .intro-h1::before {
   background-color: var(--bg-color);
-  animation: typewriter var(--typewriterSpeed) steps(var(--typewriterCharacters)) 1s forwards;
-
+  animation: typewriter var(--typewriterSpeed)
+    steps(var(--typewriterCharacters)) 1s forwards;
 }
 
 .intro-h1::after {
   width: 0.025em;
   background-color: rgba(202, 213, 226, 0.75);
-  animation:
-    typewriter var(--typewriterSpeed) steps(var(--typewriterCharacters)) 1s forwards,
+  animation: typewriter var(--typewriterSpeed)
+      steps(var(--typewriterCharacters)) 1s forwards,
     blink 500ms steps(var(--typewriterCharacters)) infinite;
 }
 
@@ -80,11 +128,10 @@ body {
   bottom: 5%;
   overflow: auto;
 }
-.arrow-down p{
+.arrow-down p {
   text-align: center;
   font-size: clamp(1rem, 3vh, 2rem);
   color: var(--intro-ch-color);
-  
 }
 
 .round {
@@ -99,7 +146,7 @@ body {
 .round span {
   z-index: 999;
   height: 3px;
-  margin:1px;
+  margin: 1px;
   width: 30px;
   background: #fff;
   transition: 0.4s ease;
@@ -157,9 +204,8 @@ body {
 
 #about {
   min-height: 100vh;
+  background: #03203c;
 }
-
-
 
 /* Animations */
 /* Intro type Animations */
@@ -173,7 +219,6 @@ body {
   to {
     background: transparent;
   }
-
 }
 
 @keyframes sub_fadein {
@@ -181,7 +226,6 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
-
 }
 
 /* Arrow animation */
