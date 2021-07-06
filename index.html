@@ -11,19 +11,17 @@
       href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
 
   <body>
     <!-- v1 -->
-    <header>
-      <nav class="top-nav">
-        <ul>
-          <li><a href="#intro">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-        </ul>
-      </nav>
-    </header>
     <main>
       <section id="intro">
         <div class="intro-text">
@@ -44,31 +42,39 @@
         </div>
       </section>
       <section id="about">
-        <!-- <div class="about-wrapper"> -->
-          <img
-            src="assets/pics/profile_1.jpg"
-            class="about-img"
-            alt="myprofile"
-            height="400px"
-            width="400px"
-          />
-          <article class="about-article">
-            <span>About Me</span>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. A
-              adipisci modi, libero illum, natus necessitatibus quas placeat est
-              ipsum nam architecto totam aspernatur sed. Possimus, sint
-              accusamus! Tempore pariatur quae ex labore nulla iste repudiandae,
-              repellendus sequi voluptatibus porro? Voluptatibus alias
-              exercitationem in repellat hic eius voluptate deleniti reiciendis.
-              nam.
-            </p>
-          </article>
-        <!-- </div> -->
+        <img
+          src="assets/pics/profile_1.jpg"
+          class="about-img"
+          alt="myprofile"
+          height="400px"
+          width="400px"
+        />
+        <article class="about-article">
+          <span>About Me</span>
+          <p>
+            I am a Web Designer and Developer based out of India. Fresh out of
+            my Bachelor`s Degree i am willing and excited to be part of todays
+            job force.
+          </p>
+        </article>
+        <a
+          href="./src/pages/resume.html"
+          value="resume"
+          target="_blank"
+          class="btn btn-resume"
+          >Check My resume</a
+        >
       </section>
-      <section id="services"></section>
+      <!-- <section id="services">
+
+      </section> -->
     </main>
     <footer>
+      <div id="social_links">
+        <a href=""><i class="fab fa-facebook-square fa-5x"></i></a>
+        <a href=""><i class="fab fa-instagram fa-5x"></i></a>
+        <a href=""><i class="fab fa-linkedin fa-5x"></i></a>
+      </div>
       <div id="rights">
         Made with &hearts;
         <span id="footer-year"></span> Antarip Gohain
